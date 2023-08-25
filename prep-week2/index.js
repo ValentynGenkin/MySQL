@@ -111,4 +111,44 @@ INSERT INTO dish_preparing_processes (Recipe_id, process_id) VALUES (7,7),(7,8),
   },
 );
 
+connection.query(
+  `
+SELECT
+    Recipes.Recipe,
+    ingredients.ingredient
+FROM
+    Recipe_ingredients
+INNER JOIN
+    ingredients ON Recipe_ingredients.ingredient_id = ingredients.id
+INNER JOIN
+    Recipes ON Recipe_ingredients.Recipe_id = Recipes.id
+WHERE
+    Recipes.Recipe = 'margarita';
+`,
+  (err, result) => {
+    if (err) throw err;
+    console.log(result.map((row) => Object.values(row)));
+  },
+);
+
+connection.query(
+  `
+  SELECT
+  categories.Dish_category,
+  recipes.Recipe
+FROM
+  recipe_category
+INNER JOIN recipes 
+  ON recipe_category.recipe_id = recipes.id
+INNER JOIN categories 
+  ON recipe_category.Dish_category_id = categories.id
+WHERE
+  categories.Dish_category = 'pasta';
+`,
+  (err, result) => {
+    if (err) throw err;
+    console.log(result.map((row) => ({ ...row })));
+  },
+);
+
 connection.end();
