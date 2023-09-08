@@ -21,23 +21,25 @@ I chose the Embedded method for storage data. I made this decision because the r
 
 Recipe document example:
 
+```
 {
-recipe_title: 'bolognese',
-tags: ['pasta', 'gluten', 'meat'],
-ingredients: [
-'spaghetti',
-'chopped meat',
-'onion',
-'carrot',
-'celery',
-'tomato',
-'tomato sauce',
-'salt',
-'black paper',
-'white paper',
-'parmesan',
-],
-preparing: ['boil', 'slice', 'stew'],
+recipe_title: 'bolognese',  
+  tags: ['pasta', 'gluten', 'meat'],  
+  ingredients: [  
+      'spaghetti',  
+      'chopped meat',  
+      'onion',  
+      'carrot',  
+      'celery',  
+      'tomato',  
+      'tomato sauce',  
+      'salt',  
+      'black paper',  
+      'white paper',  
+      'parmesan',  
+    ],  
+  preparing: ['boil', 'slice', 'stew'],  
 };
+```
 
 I choose MongoDB, in my opinion this is the easiest way for storage this type of data - recipes.
